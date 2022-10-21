@@ -46,18 +46,135 @@ class App(tk.Tk):
         self.password = ttk.Label(self, text="")
         self.password.pack()
 
+    # It generates a code pased on the inputes, when the button is clicked.
     def generateCode(self):
-        if self.checkvar1.get() == 1:
-            letters = string.ascii_lowercase
-            result = ''.join(random.choice(letters) for i in range(5))
+        # If Lowercase, Uppercase, Numbers and Symbis are not selected
+        if self.checkvar1.get() == 0 and self.checkvar2.get() == 0 and self.checkvar3.get() == 0 and self.checkvar4.get() == 0:
+            checkBoxes = string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation
+            result = ''.join(random.choice(checkBoxes) for i in range(5))  # range is for the lenght
             self.password.destroy()
             self.password = ttk.Label(self, text=result)
             self.password.pack()
 
+        # If Symbols is selected
+        elif self.checkvar1.get() == 0 and self.checkvar2.get() == 0 and self.checkvar3.get() == 0 and self.checkvar4.get() == 1:
+            checkBoxes = string.punctuation
+            result = ''.join(random.choice(checkBoxes) for i in range(5))  # range is for the lenght
+            self.password.destroy()
+            self.password = ttk.Label(self, text=result)
+            self.password.pack()
 
-    
-        
-        return "asdasdf"
+        # If Numbers is selected
+        elif self.checkvar1.get() == 0 and self.checkvar2.get() == 0 and self.checkvar3.get() == 1 and self.checkvar4.get() == 0:
+            checkBoxes = string.digits
+            result = ''.join(random.choice(checkBoxes) for i in range(5))  # range is for the lenght
+            self.password.destroy()
+            self.password = ttk.Label(self, text=result)
+            self.password.pack()
+
+        # If Numbers and Symbols are selected
+        elif self.checkvar1.get() == 0 and self.checkvar2.get() == 0 and self.checkvar3.get() == 1 and self.checkvar4.get() == 1:
+            checkBoxes = string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation
+            result = ''.join(random.choice(checkBoxes) for i in range(5))  # range is for the lenght
+            self.password.destroy()
+            self.password = ttk.Label(self, text=result)
+            self.password.pack()
+
+        # If Uppercase is selected
+        elif self.checkvar1.get() == 0 and self.checkvar2.get() == 1 and self.checkvar3.get() == 0 and self.checkvar4.get() == 0:
+            checkBoxes = string.ascii_uppercase
+            result = ''.join(random.choice(checkBoxes) for i in range(5))  # range is for the lenght
+            self.password.destroy()
+            self.password = ttk.Label(self, text=result)
+            self.password.pack()
+
+        # If Uppercase and Symbols are selected
+        elif self.checkvar1.get() == 0 and self.checkvar2.get() == 1 and self.checkvar3.get() == 0 and self.checkvar4.get() == 1:
+            checkBoxes = string.ascii_uppercase + string.punctuation
+            result = ''.join(random.choice(checkBoxes) for i in range(5))  # range is for the lenght
+            self.password.destroy()
+            self.password = ttk.Label(self, text=result)
+            self.password.pack()
+
+        # If Uppercase and Numbers are selected
+        elif self.checkvar1.get() == 0 and self.checkvar2.get() == 1 and self.checkvar3.get() == 1 and self.checkvar4.get() == 0:
+            checkBoxes = string.ascii_uppercase + string.digits
+            result = ''.join(random.choice(checkBoxes) for i in range(5))  # range is for the lenght
+            self.password.destroy()
+            self.password = ttk.Label(self, text=result)
+            self.password.pack()
+
+        # If Uppercase, Numbers and Symbols are selected
+        elif self.checkvar1.get() == 0 and self.checkvar2.get() == 1 and self.checkvar3.get() == 1 and self.checkvar4.get() == 1:
+            checkBoxes = string.ascii_uppercase + string.digits + string.punctuation
+            result = ''.join(random.choice(checkBoxes) for i in range(5))  # range is for the lenght
+            self.password.destroy()
+            self.password = ttk.Label(self, text=result)
+            self.password.pack()
+
+        # If Lowercase is selected
+        elif self.checkvar1.get() == 1 and self.checkvar2.get() == 0 and self.checkvar3.get() == 0 and self.checkvar4.get() == 0:
+            checkBoxes = string.ascii_lowercase
+            result = ''.join(random.choice(checkBoxes) for i in range(5))  # range is for the lenght
+            self.password.destroy()
+            self.password = ttk.Label(self, text=result)
+            self.password.pack()
+
+        # If Lowercase and Symbols are selected
+        elif self.checkvar1.get() == 1 and self.checkvar2.get() == 0 and self.checkvar3.get() == 0 and self.checkvar4.get() == 1:
+            checkBoxes = string.ascii_lowercase + string.punctuation
+            result = ''.join(random.choice(checkBoxes) for i in range(5))  # range is for the lenght
+            self.password.destroy()
+            self.password = ttk.Label(self, text=result)
+            self.password.pack()
+
+        # If Lowercase and Numbers are selected
+        elif self.checkvar1.get() == 1 and self.checkvar2.get() == 0 and self.checkvar3.get() == 1 and self.checkvar4.get() == 0:
+            checkBoxes = string.ascii_lowercase + string.digits
+            result = ''.join(random.choice(checkBoxes) for i in range(5))  # range is for the lenght
+            self.password.destroy()
+            self.password = ttk.Label(self, text=result)
+            self.password.pack()
+
+        # If Lowercase, Numbers and Symbols are selected
+        elif self.checkvar1.get() == 1 and self.checkvar2.get() == 0 and self.checkvar3.get() == 1 and self.checkvar4.get() == 1:
+            checkBoxes = string.ascii_lowercase + string.digits + string.punctuation
+            result = ''.join(random.choice(checkBoxes) for i in range(5))  # range is for the lenght
+            self.password.destroy()
+            self.password = ttk.Label(self, text=result)
+            self.password.pack()
+
+        # If Lowercase and Uppercase are selected
+        elif self.checkvar1.get() == 1 and self.checkvar2.get() == 1 and self.checkvar3.get() == 0 and self.checkvar4.get() == 0:
+            checkBoxes = string.ascii_lowercase + string.ascii_uppercase
+            result = ''.join(random.choice(checkBoxes) for i in range(5))  # range is for the lenght
+            self.password.destroy()
+            self.password = ttk.Label(self, text=result)
+            self.password.pack()
+
+        # If Lowercase, Uppercase and Symbols are selected
+        elif self.checkvar1.get() == 1 and self.checkvar2.get() == 1 and self.checkvar3.get() == 0 and self.checkvar4.get() == 1:
+            checkBoxes = string.ascii_lowercase + string.ascii_uppercase + string.punctuation
+            result = ''.join(random.choice(checkBoxes) for i in range(5))  # range is for the lenght
+            self.password.destroy()
+            self.password = ttk.Label(self, text=result)
+            self.password.pack()
+
+        # If Lowercase, Uppercase and Numbers are selected
+        elif self.checkvar1.get() == 1 and self.checkvar2.get() == 1 and self.checkvar3.get() == 1 and self.checkvar4.get() == 0:
+            checkBoxes = string.ascii_lowercase + string.ascii_uppercase + string.digits
+            result = ''.join(random.choice(checkBoxes) for i in range(5))  # range is for the lenght
+            self.password.destroy()
+            self.password = ttk.Label(self, text=result)
+            self.password.pack()
+
+        # If Lowercase, Uppercase, Numbers and Symbols are selected
+        else:
+            checkBoxes = string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation
+            result = ''.join(random.choice(checkBoxes) for i in range(5))  # range is for the lenght
+            self.password.destroy()
+            self.password = ttk.Label(self, text=result)
+            self.password.pack()
 
 
 if __name__ == "__main__":
